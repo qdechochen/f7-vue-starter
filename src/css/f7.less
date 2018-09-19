@@ -1,0 +1,101 @@
+/* f7 hack */
+/* tab view hack */
+.view-main {
+  position: absolute;
+  pointer-events: none;
+  top:0;
+  width: 100%;
+  .page {
+    pointer-events: auto;
+  }
+  .page[data-name="blank"] {
+    opacity:0;
+    pointer-events: none;
+  }
+  .navbar {
+    pointer-events: auto;
+    transform: translate(0, -100px);
+    .navbar-inner {
+      transform: translate(0, 100px);
+      background-color: inherit;
+      &:empty {
+        background-color: transparent;
+        pointer-events: none;
+      }
+    }
+  }
+}
+.views.tabs {
+  transition: transform 400ms;
+  &.previous-view {
+    transform: translate3d(-20%, 0, 0);
+  }
+}
+/* tab view hack end */
+.list {
+  li {
+    .item-content {
+      .item-inner {
+        .item-title {
+          &.required {
+            &::before {
+              position: absolute;
+              content: "*";
+              left: -8px;
+              top: 6px;
+              color: #ff3b30;
+            }
+          }
+        }
+      }
+    }
+    .input-after {
+      .button {
+        margin-left: 15px;
+      }
+    }
+  }
+} 
+/* input error icon */
+.item-input-wrap.error {
+  padding-right: 24px;
+  input.error {
+    color: #ff3b30;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    color: #fff;
+    background-image: url("data:image/svg+xml;charset=utf-8,%20%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%20200%20200'%20fill%3D'#ff3b30'%3E%20%3Cpath%20d%3D'M100%200A100%20100%200%201%201%200%20100%20100%20100%200%200%201%20100%200Zm.16%20170c7.71%200%2014-5.85%2014-13.07s-6.26-13.06-14-13.06-14%205.85-14%2013.06S92.45%20170%20100.16%20170Zm25-108.91H125a22%2022%200%200%200%20.16-2.57c0-13-11.21-23.52-25-23.52s-25%2010.53-25%2023.52a24.29%2024.29%200%200%200%20.15%202.57h-.15l11.1%2061.78a1.2%201.2%200%200%200%200%20.2c0%207.21%206.26%2013.06%2014%2013.06s14-5.85%2014-13.06c0-.07%200-.14%200-.2l11.1-61.78Z'%2F%3E%20%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
+}
+.list>ul>li.error>.smart-select {
+  &::after {
+    content: "";
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    color: #fff;
+    background-image: url("data:image/svg+xml;charset=utf-8,%20%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%20200%20200'%20fill%3D'#ff3b30'%3E%20%3Cpath%20d%3D'M100%200A100%20100%200%201%201%200%20100%20100%20100%200%200%201%20100%200Zm.16%20170c7.71%200%2014-5.85%2014-13.07s-6.26-13.06-14-13.06-14%205.85-14%2013.06S92.45%20170%20100.16%20170Zm25-108.91H125a22%2022%200%200%200%20.16-2.57c0-13-11.21-23.52-25-23.52s-25%2010.53-25%2023.52a24.29%2024.29%200%200%200%20.15%202.57h-.15l11.1%2061.78a1.2%201.2%200%200%200%200%20.2c0%207.21%206.26%2013.06%2014%2013.06s14-5.85%2014-13.06c0-.07%200-.14%200-.2l11.1-61.78Z'%2F%3E%20%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
+  .item-after {
+    padding-right: 20px;
+  }
+}
+/* input error icon end */
